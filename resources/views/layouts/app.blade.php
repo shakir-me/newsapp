@@ -42,9 +42,25 @@
                         <li class="nav-item border-right border-secondary">
                             <a class="nav-link text-body small" href="/conatct">Contact</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-body small" href="{{url('/login')}}">Login</a>
+                   @auth
+                         @if(Auth::user()->utype='ADMIN')
+
+                         <li class="nav-item">
+                            <a class="nav-link text-body small" href="{{url('admin/categories')}}">Category</a>
                         </li>
+
+                        @else
+
+                         <h1>User Panle</h1>
+
+                        @endif
+
+
+
+                        @endif
+                        <!--  <li class="nav-item">
+                            <a class="nav-link text-body small" href="{{url('/login')}}">Login</a>
+                        </li> -->
                     </ul>
                 </nav>
             </div>

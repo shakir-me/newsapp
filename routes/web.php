@@ -4,6 +4,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\CategoryComponent;
 use App\Http\Livewire\ContactComponent;
+use App\Http\Livewire\SingleComponent;
+use App\Http\Livewire\Admin\AdminCategoryComponent;
+use App\Http\Livewire\Admin\AdminAddCategoryComponent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +27,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',HomeComponent::class)->name('index');
 Route::get('/category',CategoryComponent::class)->name('category');
 Route::get('/conatct',ContactComponent::class)->name('conatct');
+Route::get('/single',SingleComponent::class)->name('single');
 
 
 
@@ -37,6 +41,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+   Route::get('/admin/categories',AdminCategoryComponent::class)->name('admin.categories');
+    Route::get('/admin/category/add',AdminAddCategoryComponent::class)->name('admin.category.add');
+
 });
 
 require __DIR__.'/auth.php';
