@@ -6,7 +6,11 @@
                   <h3>Admin Categories</h3>
 
                  <a href="{{ route('admin.category.add') }}" class="btn btn-primary">Add Category</a>
+                 @if (Session::has('message'))
 
+                 <div class="alert alert-success" role="alert">{{ Session::get('message') }}</div>
+                     
+                 @endif
                 <div class="card">
                     <table class="table">
                       <thead>
@@ -31,8 +35,8 @@
                              
                           </td>
                           <td>
-                              <a href="" class="btn btn-info">Edit</a>
-                              <a href="" class="btn btn-danger">Delete</a>
+                              <a href="{{ route('admin.category.edit', ['category_id'=>$category->id]) }} " class="btn btn-info">Edit</a>
+                              <a href="#" onclick="confirm('Are you sure delete Category ?') || event.stopImmediatePropagation()" wire:click.prevent="deleteCategory({{$category->id  }})" class="btn btn-danger" >Delete</a>
                           </td>
                         </tr>
                       @endforeach

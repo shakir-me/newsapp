@@ -12,7 +12,7 @@
                  <div class="alert alert-success" role="alert">{{ Session::get('message') }}</div>
                      
                  @endif
-                    <form wire:submit.prevent="CategoryStore" >
+                    <form wire:submit.prevent="UpdateCategory" >
                        
                         <div class="form-group">
                           <label for="exampleInputEmail1">Category Name</label>
@@ -42,7 +42,7 @@
                           @enderror
                           </div>
                        
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Update</button>
                       </form>
                 </div>
 
