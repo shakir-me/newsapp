@@ -49,6 +49,10 @@
                             <a class="nav-link text-body small" href="{{url('admin/categories')}}">Category</a>
                         </li>
 
+                           <li class="nav-item">
+                            <a class="nav-link text-body small" href="{{url('admin/tags')}}">Tags</a>
+                        </li>
+
                         @else
 
                          <h1>User Panle</h1>

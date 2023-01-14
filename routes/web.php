@@ -8,6 +8,7 @@ use App\Http\Livewire\SingleComponent;
 use App\Http\Livewire\Admin\AdminCategoryComponent;
 use App\Http\Livewire\Admin\AdminAddCategoryComponent;
 use App\Http\Livewire\Admin\AdminEditCategoryComponent;
+use App\Http\Livewire\Admin\AdminTagComponent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,10 +43,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
+//category route
    Route::get('/admin/categories',AdminCategoryComponent::class)->name('admin.categories');
     Route::get('/admin/category/add',AdminAddCategoryComponent::class)->name('admin.category.add');
     Route::get('/admin/category/edit/{category_id}',AdminEditCategoryComponent::class)->name('admin.category.edit');
+//tags route
+    Route::get('/admin/tags',AdminTagComponent::class)->name('admin.tags');
+
 
 });
 
