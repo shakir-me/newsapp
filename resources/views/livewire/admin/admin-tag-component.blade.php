@@ -5,7 +5,7 @@
                 <div class="col-lg-12">
                   <h3>Admin Tags</h3>
 
-                 <a href="#" class="btn btn-primary">Add Tag</a>
+                 <a href="{{ url('admin/tag/add') }}" class="btn btn-primary">Add Tag</a>
                  @if (Session::has('message'))
 
                  <div class="alert alert-success" role="alert">{{ Session::get('message') }}</div>
@@ -35,8 +35,8 @@
                              
                           </td>
                           <td>
-                              <a href=" " class="btn btn-info">Edit</a>
-                              <a href="#"  class="btn btn-danger" >Delete</a>
+                              <a href="{{ route('admin.tag.edit', ['tag_id'=>$tag->id]) }}" class="btn btn-info">Edit</a>
+                              <a href="#" onclick="confirm('Are you sure delete Tag ?') || event.stopImmediatePropagation()" wire:click.prevent="deleteTag({{$tag->id  }})"  class="btn btn-danger" >Delete</a>
                           </td>
                         </tr>
                       @endforeach
