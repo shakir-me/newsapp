@@ -42,7 +42,7 @@
                         <li class="nav-item border-right border-secondary">
                             <a class="nav-link text-body small" href="/conatct">Contact</a>
                         </li>
-                   @auth
+                 
                          @if(Auth::user()->utype='ADMIN')
 
                          <li class="nav-item">
@@ -53,6 +53,10 @@
                             <a class="nav-link text-body small" href="{{url('admin/tags')}}">Tags</a>
                         </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link text-body small" href="{{url('admin/posts')}}">Post</a>
+                        </li>
+
                         @else
 
                          <h1>User Panle</h1>
@@ -61,7 +65,7 @@
 
 
 
-                        @endif
+                       
                         <!--  <li class="nav-item">
                             <a class="nav-link text-body small" href="{{url('/login')}}">Login</a>
                         </li> -->

@@ -11,6 +11,8 @@ use App\Http\Livewire\Admin\AdminEditCategoryComponent;
 use App\Http\Livewire\Admin\AdminTagComponent;
 use App\Http\Livewire\Admin\AdminAddTagComponent;
 use App\Http\Livewire\Admin\AdminEditTagComponent;
+use App\Http\Livewire\Admin\AdminPostsComponent;
+use App\Http\Livewire\Admin\AdminAddPostComponent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -53,6 +55,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/tags',AdminTagComponent::class)->name('admin.tags');
     Route::get('/admin/tag/add',AdminAddTagComponent::class)->name('admin.tags');
     Route::get('/admin/tag/edit/{tag_id}',AdminEditTagComponent::class)->name('admin.tag.edit');
+
+    //posts route
+    Route::get('/admin/posts',AdminPostsComponent::class)->name('admin.posts');
+    Route::get('/admin/post/add',AdminAddPostComponent::class)->name('admin.post.add');
 
 
 });
